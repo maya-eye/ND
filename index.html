@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="zh-Hant">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
 <title>Universe 100｜六芒星天賦、伴侶與相生相剋分析</title>
 <style>
 :root{--bg:#070a16;--panel:#11172c;--panel2:#171e37;--text:#f8f7ff;--muted:#adb7d6;--gold:#f2ca70;--blue:#59d0ff;--violet:#936fff;--line:rgba(255,255,255,.13);--good:#8cf0c5;--shadow:#ffb1c1}
@@ -28,232 +29,270 @@ main{width:min(1240px,93%);margin:auto;padding-bottom:55px}.panel{background:lin
 .earth-section{margin-top:22px}.earth-controls{display:grid;grid-template-columns:1fr 1fr 1fr auto auto;gap:10px;align-items:end}.earth-controls label{display:block;color:var(--muted);margin-bottom:7px}.earth-controls input,.earth-controls select{width:100%;padding:13px;border:1px solid var(--line);border-radius:12px;background:#0c1224;color:#fff;font:inherit}.earth-controls button{padding:13px 18px;border:0;border-radius:12px;background:linear-gradient(90deg,var(--gold),#fff0a9);font-weight:900;cursor:pointer}.earth-card{margin-top:18px;border:1px solid var(--line);border-radius:20px;padding:20px;background:rgba(255,255,255,.035)}.earth-head{display:flex;gap:15px;align-items:center;flex-wrap:wrap}.earth-num{font-size:3.2rem;font-weight:1000;color:var(--gold)}.earth-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:16px}.earth-box{padding:15px;border-radius:15px;border:1px solid var(--line);background:rgba(255,255,255,.04)}.earth-box h4{margin:0 0 9px;color:var(--blue)}.job-tags{display:flex;flex-wrap:wrap;gap:8px}.job-tag{padding:7px 10px;border-radius:999px;background:rgba(143,107,255,.14);border:1px solid rgba(143,107,255,.35);font-size:.88rem}.profession-list{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}.profession-group{padding:15px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.035)}.profession-group h4{margin:0 0 8px;color:var(--gold)}.profession-group p{line-height:1.7}.earth-log{display:grid;gap:10px;margin-top:12px}.earth-log-item{padding:13px;border:1px solid var(--line);border-radius:13px;background:rgba(255,255,255,.035)}@media(max-width:950px){.earth-controls{grid-template-columns:1fr 1fr}.earth-grid,.profession-list{grid-template-columns:1fr}}@media(max-width:600px){.earth-controls{grid-template-columns:1fr}}
 
 .database-section{margin-top:22px}.db-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:15px 0}.db-stat{padding:15px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.04)}.db-stat strong{display:block;font-size:1.65rem;color:var(--gold)}.db-controls{display:grid;grid-template-columns:1fr 1fr auto;gap:10px;margin-top:15px}.db-controls input,.db-controls select{padding:13px;border:1px solid var(--line);border-radius:12px;background:#0c1224;color:#fff;font:inherit}.db-controls button{padding:13px 17px;border:0;border-radius:12px;background:linear-gradient(90deg,var(--violet),var(--blue));color:#fff;font-weight:800}.db-results{margin-top:15px;display:grid;gap:10px}.db-item{padding:13px;border:1px solid var(--line);border-radius:13px;background:rgba(255,255,255,.035);line-height:1.65}.triangle-analysis{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}.triangle-panel{padding:18px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.04)}.triangle-panel h3{margin-top:0;color:var(--gold)}.triangle-panel ul{padding-left:20px;line-height:1.8}.database-note{color:var(--muted);font-size:.86rem;line-height:1.7}@media(max-width:900px){.db-stats{grid-template-columns:1fr 1fr}.db-controls,.triangle-analysis{grid-template-columns:1fr}}@media(max-width:540px){.db-stats{grid-template-columns:1fr}}
+
+/* ===== 2026 重新編排版面 ===== */
+html{scroll-behavior:smooth;scroll-padding-top:86px}
+body{background-attachment:fixed}
+.site-hero{padding:78px 22px 56px;text-align:left;position:relative;overflow:hidden}
+.site-hero:after{content:"";position:absolute;width:430px;height:430px;border:1px solid rgba(255,255,255,.07);border-radius:50%;right:-100px;top:-190px;box-shadow:0 0 0 55px rgba(89,208,255,.025),0 0 0 110px rgba(147,111,255,.025)}
+.hero-inner{width:min(1240px,93%);margin:auto;display:grid;grid-template-columns:1fr 260px;align-items:center;gap:40px;position:relative;z-index:1}
+.eyebrow{display:inline-block;font-size:.78rem;letter-spacing:.2em;color:var(--blue);font-weight:900;margin-bottom:14px}
+.site-hero h1{font-size:clamp(2.5rem,6vw,5.2rem);line-height:1.05;max-width:850px}
+.site-hero p{margin:20px 0 0;max-width:720px;font-size:1.05rem}
+.hero-actions{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}.hero-actions a{padding:13px 20px;border-radius:999px;font-weight:900;text-decoration:none}.hero-primary{background:linear-gradient(90deg,var(--gold),#fff1ad);color:#17101f}.hero-secondary{border:1px solid var(--line);color:#fff;background:rgba(255,255,255,.05)}
+.hero-symbol{width:230px;aspect-ratio:1;display:grid;place-items:center;border-radius:50%;border:1px solid rgba(242,202,112,.4);background:radial-gradient(circle,rgba(242,202,112,.18),rgba(147,111,255,.05) 55%,transparent 56%);position:relative;box-shadow:0 0 80px rgba(147,111,255,.18)}
+.hero-symbol span{position:absolute;font-size:10rem;color:rgba(255,255,255,.12);line-height:1}.hero-symbol b{font-size:4rem;color:var(--gold);z-index:1}.hero-symbol small{position:absolute;bottom:45px;color:var(--blue);letter-spacing:.18em;font-weight:900}
+.site-nav{position:sticky;top:0;z-index:50;background:rgba(5,7,17,.84);backdrop-filter:blur(18px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.nav-inner{width:min(1240px,93%);min-height:66px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{color:var(--gold);font-weight:1000;text-decoration:none;white-space:nowrap}.nav-links{display:flex;gap:6px;overflow:auto;scrollbar-width:none}.nav-links a{color:var(--muted);text-decoration:none;padding:10px 12px;border-radius:10px;white-space:nowrap;font-size:.9rem;font-weight:800}.nav-links a:hover{background:rgba(255,255,255,.07);color:#fff}
+main{padding-top:28px}.section-anchor{scroll-margin-top:88px}.section-kicker{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:.82rem;font-weight:900;letter-spacing:.06em;margin-bottom:16px}.section-kicker span{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:rgba(242,202,112,.12);border:1px solid rgba(242,202,112,.35);color:var(--gold)}
+.control-panel{display:grid;grid-template-columns:1fr .7fr;gap:14px;align-items:end}.control-panel .draw{margin-top:0;height:50px}.control-panel .controls{grid-template-columns:1fr auto}
+.dashboard{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0 22px}.dashboard a{min-height:138px;padding:18px;border-radius:20px;border:1px solid var(--line);background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.025));text-decoration:none;color:#fff;display:flex;flex-direction:column;transition:.25s transform,.25s border-color}.dashboard a:hover{transform:translateY(-4px);border-color:rgba(89,208,255,.5)}.dashboard span{color:var(--blue);font-size:.8rem;font-weight:900}.dashboard b{font-size:1.1rem;margin-top:auto}.dashboard small{color:var(--muted);margin-top:6px;line-height:1.45}
+.panel,.card-section{margin-top:22px}.layout{margin-top:0}.layout .panel{margin-top:0}.results{max-height:760px;overflow:auto}.results::-webkit-scrollbar{width:6px}.results::-webkit-scrollbar-thumb{background:rgba(255,255,255,.18);border-radius:10px}
+.people-actions button:last-child{color:#ffd4dc;border-color:rgba(255,177,193,.3)}
+button,a,input,select,textarea{transition:.2s ease}button:hover{filter:brightness(1.08);transform:translateY(-1px)}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+footer{margin-top:20px;border-top:1px solid var(--line);background:rgba(0,0,0,.16)}footer div{width:min(1240px,93%);margin:auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}footer b{color:var(--gold)}
+.back-top{position:fixed;right:22px;bottom:22px;width:44px;height:44px;display:grid;place-items:center;border-radius:50%;background:linear-gradient(135deg,var(--violet),var(--blue));color:#fff;text-decoration:none;font-weight:900;box-shadow:0 12px 35px rgba(0,0,0,.35);z-index:60}
+@media(max-width:980px){.hero-inner{grid-template-columns:1fr}.hero-symbol{display:none}.dashboard{grid-template-columns:1fr 1fr}.control-panel{grid-template-columns:1fr}.nav-inner{align-items:flex-start;padding:12px 0;flex-direction:column}.site-nav{position:relative}.nav-links{width:100%}html{scroll-padding-top:16px}.section-anchor{scroll-margin-top:16px}}
+@media(max-width:620px){.site-hero{padding:54px 18px 38px}.site-hero h1{font-size:2.55rem}.dashboard{grid-template-columns:1fr}.control-panel .controls{grid-template-columns:1fr}.panel{padding:18px;border-radius:19px}.triangle-box{overflow:hidden}.triangle{transform:scale(.9)}.nav-links a{padding:9px}.back-top{right:14px;bottom:14px}.section-kicker{line-height:1.4}}
 </style>
 </head>
-<body>
-<header><h1>Universe 100</h1><p>以正三角分析天賦、職業、技能與使命，以倒三角分析伴侶偏好、家庭角色與相處方式，並建立多人相生相剋對照表。</p></header>
+<body id="top">
+<header class="site-hero">
+<div class="hero-inner">
+<div class="hero-copy">
+<span class="eyebrow">UNIVERSE 100 · COSMIC NUMBER SYSTEM</span>
+<h1>六芒星宇宙數字分析</h1>
+<p>從出生日期建立國曆正三角、農曆倒三角、人物關係、職涯資料庫與每日探索牌陣。</p>
+<div class="hero-actions">
+<a class="hero-primary" href="#calculator">開始分析</a>
+<a class="hero-secondary" href="#people">人物對照</a>
+</div>
+</div>
+<div aria-hidden="true" class="hero-symbol"><span>✦</span><b>100</b><small>00–99</small></div>
+</div>
+</header>
+<nav aria-label="主要導覽" class="site-nav">
+<div class="nav-inner">
+<a class="brand" href="#top">Universe 100</a>
+<div class="nav-links">
+<a href="#calculator">六芒星分析</a>
+<a href="#card">宇宙卡</a>
+<a href="#people">人物關係</a>
+<a href="#database">完整資料庫</a>
+<a href="#daily">每日抽卡</a>
+<a href="#explore">探索流程</a>
+</div>
+</div>
+</nav>
+
 <main>
-<section class="panel">
-  <div class="controls"><div><label for="birthday">出生日期</label><input id="birthday" type="date" value="1986-02-04"></div><button id="generateBtn">生成六芒星人格</button></div>
-  <button id="drawBtn" class="draw">隨機抽取 00–99 宇宙卡</button>
-</section>
-<section class="layout">
-  <article class="panel triangle-box">
-    <div style="width:100%">
-      <div class="triangle">
-        <svg viewBox="0 0 500 500" aria-hidden="true">
-          <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#59d0ff"/><stop offset="1" stop-color="#f2ca70"/></linearGradient><linearGradient id="g2" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#936fff"/><stop offset="1" stop-color="#f2ca70"/></linearGradient></defs>
-          <polygon points="250,38 52,382 448,382" fill="rgba(89,208,255,.06)" stroke="url(#g1)" stroke-width="4"/>
-          <polygon points="52,118 448,118 250,462" fill="rgba(147,111,255,.06)" stroke="url(#g2)" stroke-width="4"/>
-          <circle cx="250" cy="250" r="62" fill="rgba(242,202,112,.09)" stroke="rgba(242,202,112,.5)" stroke-width="3"/>
-        </svg>
-        <div class="calendar-label solar-label">國曆正三角形</div>
-        <div class="calendar-label lunar-label">農曆倒三角形</div>
-        <div class="node body-node solar-node"><strong id="bodyValue">24/6</strong><b>國曆身體</b><small id="bodyShort">外在行動</small></div>
-        <div class="node mind-node solar-node"><strong id="mindValue">30/3</strong><b>國曆大腦</b><small id="mindShort">思考判斷</small></div>
-        <div class="node soul-node solar-node"><strong id="soulValue">57/12/3</strong><b>國曆靈魂</b><small id="soulShort">內在動機</small></div>
-        <div class="node lunar-body-node lunar-node"><strong id="lunarBodyValue">26/8</strong><b>農曆身體</b><small id="lunarBodyShort">深層行動</small></div>
-        <div class="node lunar-mind-node lunar-node"><strong id="lunarMindValue">34/7</strong><b>農曆大腦</b><small id="lunarMindShort">潛意識思考</small></div>
-        <div class="node lunar-soul-node lunar-node"><strong id="lunarSoulValue">93/12/3</strong><b>農曆靈魂</b><small id="lunarSoulShort">靈魂本質</small></div>
-        <div class="node center-node"><strong id="starValue">6</strong><b>六芒星核心</b><small id="starShort">雙曆融合</small></div>
-      </div>
-      <div class="lunar-date">農曆生日：<b id="lunarDateText">自動轉換中</b></div>
-    </div>
-  </article>
-  <article class="panel results">
-    <div class="analysis-card"><h3>國曆正三角形</h3><p id="solarTriangleAnalysis"></p></div>
-    <div class="analysis-card"><h3>農曆倒三角形</h3><p id="lunarTriangleAnalysis"></p></div>
-    <div class="analysis-card positive"><h3>六芒星正向人格</h3><p id="positiveAnalysis"></p></div>
-    <div class="analysis-card negative"><h3>六芒星未覺醒人格</h3><p id="shadowAnalysis"></p></div>
-    <div class="analysis-card summary"><h3>六芒星整合與成長方向</h3><p id="growthAnalysis"></p></div>
-  </article>
-</section>
-<section class="panel fusion">
-  <h2>六組數字人格分析</h2>
-  <div class="six-grid">
-    <div class="analysis-card"><h3>國曆身體數字</h3><p id="bodyAnalysis"></p><div class="chips" id="bodyChips"></div></div>
-    <div class="analysis-card"><h3>農曆身體數字</h3><p id="lunarBodyAnalysis"></p><div class="chips" id="lunarBodyChips"></div></div>
-    <div class="analysis-card"><h3>國曆大腦數字</h3><p id="mindAnalysis"></p><div class="chips" id="mindChips"></div></div>
-    <div class="analysis-card"><h3>農曆大腦數字</h3><p id="lunarMindAnalysis"></p><div class="chips" id="lunarMindChips"></div></div>
-    <div class="analysis-card"><h3>國曆靈魂數字</h3><p id="soulAnalysis"></p><div class="chips" id="soulChips"></div></div>
-    <div class="analysis-card"><h3>農曆靈魂數字</h3><p id="lunarSoulAnalysis"></p><div class="chips" id="lunarSoulChips"></div></div>
-  </div>
-</section>
-
-<section class="panel house-section">
-  <span class="house-label">生日房屋人格模型</span>
-  <h2>出生年月日的房屋結構</h2>
-  <p class="meaning">把出生日期想像成一棟房子：年份是地基，月份是格局，日期是門面，八碼總和是實際使用模式，月份與日期化簡數的組合則代表房子的身分象徵。</p>
-  <div class="house-grid">
-    <article class="house-card"><small>房子地基｜年四碼</small><strong id="houseFoundation">1986</strong><p id="houseFoundationText"></p></article>
-    <article class="house-card"><small>房子格局｜月二碼</small><strong id="houseLayout">02</strong><p id="houseLayoutText"></p></article>
-    <article class="house-card"><small>房子門面｜日二碼</small><strong id="houseFacade">04</strong><p id="houseFacadeText"></p></article>
-    <article class="house-card"><small>房子使用模式｜八碼加總</small><strong id="houseUsage">30/3</strong><p id="houseUsageText"></p></article>
-    <article class="house-card"><small>房子身分象徵｜月＋日期化簡</small><strong id="houseIdentity">24/6</strong><p id="houseIdentityText"></p></article>
-  </div>
-  <div class="house-summary" id="houseSummary"></div>
-</section>
-
-<section class="panel people-section">
-  <span class="house-label">相生相剋人物對照</span>
-  <h2>多人相生相剋、互補與家庭關係分析</h2>
-  <p class="meaning">輸入父母、兄弟姊妹、伴侶、朋友或工作夥伴的生日，按下「新增人物」後，系統會建立相生相剋對照表，整理互補優勢、衝突來源與溝通方法。</p>
-
-  <div class="people-form">
-    <div><label for="personName">姓名或稱呼</label><input id="personName" maxlength="24" placeholder="例如：媽媽、哥哥、小美"></div>
-    <div><label for="personRelation">關係</label>
-      <select id="personRelation">
-        <option>家人</option><option>父親</option><option>母親</option><option>兄弟姊妹</option>
-        <option>伴侶</option><option>朋友</option><option>同事</option><option>合作夥伴</option><option>其他</option>
-      </select>
-    </div>
-    <div><label for="personBirthday">出生年月日</label><input id="personBirthday" type="date"></div>
-    <button id="addPersonBtn">新增人物</button>
-  </div>
-
-  <div class="people-actions">
-    <button id="addCurrentPersonBtn">加入本人</button>
-    <button id="clearPeopleBtn">清除全部人物</button>
-  </div>
-
-  <div class="same-birthday" id="sameBirthdayResult">加入人物後，系統會標示同年、同月或同日出生者，以及完全相同生日的人。</div>
-
-  <div class="people-table-wrap">
-    <table class="people-table">
-      <thead><tr><th>人物</th><th>生日</th><th>門面</th><th>使用模式</th><th>身分象徵</th><th>DNA 格局</th><th>核心特質</th><th>操作</th></tr></thead>
-      <tbody id="peopleTableBody"></tbody>
-    </table>
-  </div>
-
-  <h3 style="margin-top:22px">相生相剋對照表</h3>
-  <div class="relation-grid" id="relationGrid"><div class="empty">至少加入兩位人物後產生比較。</div></div>
-
-  <h3 style="margin-top:22px">格局職業、賺錢與生活分析</h3>
-  <div class="career-grid" id="careerGrid"><div class="empty">加入人物後顯示個別方向。</div></div>
-
-  <p class="disclaimer">本分析是 Universe 100 原創自我探索模型，用來協助對話與理解差異。家庭衝突仍需根據實際行為、界線、資源與溝通處理，不能只依生日判斷誰對誰錯。</p>
-</section>
-<section class="card-section">
-  <article class="panel"><div class="cosmic-card"><div class="num" id="cardNumber">30</div><div class="title" id="cardTitle">創造・宇宙之源</div><div class="tag" id="cardTag">讓想法形成新的起點</div><div class="meta"><div><small>DNA 格局</small><b id="cardDNA">比肩</b></div><div><small>生命靈數</small><b id="cardLife">3</b></div><div><small>易經原型</small><b id="cardGua">震</b></div><div><small>能量狀態</small><b>覺醒中</b></div></div><div class="meaning" id="cardMeaning"></div><div class="chips" id="cardChips"></div></div></article>
-  <article class="panel"><h2>數字計算說明</h2><p class="meaning">身體數字使用出生日期；當日期是 01–09 時，將月份與日期中的 0 移除後組成兩位數，例如 02/04 → 24。大腦數字為出生年月日八碼逐位加總。靈魂數字則將「月份化簡數＋大腦化簡數」與「日期化簡數＋大腦化簡數」分別化簡後組成兩位數。三角核心由身體、大腦、靈魂三個最終化簡數相加。</p><p class="note">本工具屬於你創作的 Universe 100 宇宙數字系統，用於卡牌、自我探索與故事角色設定，不是科學或醫療診斷。</p></article>
-</section>
-
-
-<section class="panel explore-flow" id="cosmicExploration">
-  <h2>宇宙探索流程</h2>
-  <p class="spread-info">透過抽卡、觀察、閱讀與書寫，把卡牌訊息轉化為可實踐的下一步。</p>
-  <div class="flow-track" id="flowTrack">
-    <div class="flow-step active">1 抽卡</div><div class="flow-step">2 觀察</div><div class="flow-step">3 閱讀角色</div><div class="flow-step">4 回答問題</div><div class="flow-step">5 分享討論</div><div class="flow-step">6 記錄日誌</div><div class="flow-step">7 設定下一步</div><div class="flow-step">8 完成探索</div>
-  </div>
-  <div class="explore-stage active" data-stage="0">
-    <h3>抽卡</h3><p>先放慢呼吸，在心中想一個目前想探索的問題，再抽出一張宇宙數字卡。</p>
-    <button id="exploreDrawBtn">抽取探索卡</button>
-  </div>
-  <div class="explore-stage" data-stage="1">
-    <h3>觀察</h3><div class="explore-card"><div class="big-number" id="exploreNumber">00</div><div><h3 id="exploreTitle">宇宙之源</h3><p id="exploreObservePrompt">先不急著解釋，觀察這個數字、名稱與第一感受。</p><textarea id="observeNote" placeholder="我第一眼看見什麼？有什麼感覺、聯想或畫面？"></textarea></div></div>
-  </div>
-  <div class="explore-stage" data-stage="2">
-    <h3>閱讀角色</h3><div class="prompt-box" id="exploreRoleText"></div><textarea id="roleNote" placeholder="這個角色最像我生活中的哪一部分？"></textarea>
-  </div>
-  <div class="explore-stage" data-stage="3">
-    <h3>回答問題</h3><div class="prompt-box" id="exploreQuestion"></div><textarea id="answerNote" placeholder="寫下你的答案，不需要完美。"></textarea>
-  </div>
-  <div class="explore-stage" data-stage="4">
-    <h3>分享討論</h3><p>可以把感受說給朋友、家人或探索夥伴，也可以只寫給自己。</p><textarea id="shareNote" placeholder="我想分享的重點是……"></textarea>
-  </div>
-  <div class="explore-stage" data-stage="5">
-    <h3>記錄日誌</h3><textarea id="journalNote" rows="7" placeholder="今天發生了什麼？這張牌讓我看見什麼？哪些想法值得留下？"></textarea>
-  </div>
-  <div class="explore-stage" data-stage="6">
-    <h3>設定下一步</h3><div class="prompt-box">把洞察變成一個小而明確的行動。最好能在 24 小時內開始。</div><input id="nextAction" placeholder="我的下一步是……"><input id="actionTime" type="date">
-  </div>
-  <div class="explore-stage" data-stage="7">
-    <h3>完成探索</h3><div class="explore-summary" id="exploreSummary"></div><button id="saveExplorationBtn">儲存本次探索</button><button class="clear" id="restartExplorationBtn">開始新的探索</button>
-  </div>
-  <div class="explore-nav"><button class="clear" id="prevExploreBtn" disabled>上一步</button><button id="nextExploreBtn" disabled>下一步</button></div>
-  <p class="privacy-note">探索內容只儲存在目前瀏覽器，不會自動上傳。</p>
-</section>
 
 
 
-<section class="panel database-section">
-  <span class="house-label">Universe 100 完整資料庫</span>
-  <h2>職業、技能、人格、情緒、事件與關係資料庫</h2>
-  <p class="meaning">正三角形的身體、大腦、靈魂用來分析天賦、職業、技能與使命；倒三角形的身體、大腦、靈魂用來分析伴侶偏好、家庭角色與相處方式。</p>
-  <div class="db-stats" id="dbStats"></div>
 
-  <div class="triangle-analysis">
-    <article class="triangle-panel">
-      <h3>▲ 正三角｜身體 × 大腦 × 靈魂：天賦與使命</h3>
-      <div id="positiveTriangleAnalysis">輸入生日後自動產生。</div>
-    </article>
-    <article class="triangle-panel">
-      <h3>▼ 倒三角｜身體 × 大腦 × 靈魂：伴侶與關係</h3>
-      <div id="inverseTriangleAnalysis">輸入生日後自動產生。</div>
-    </article>
-  </div>
 
-  <div class="db-controls">
-    <select id="dbType">
-      <option value="professions">職業</option>
-      <option value="skills">技能</option>
-      <option value="traits">人格特質</option>
-      <option value="emotions">情緒</option>
-      <option value="events">人生事件</option>
-      <option value="partnerTraits">伴侶特質</option>
-      <option value="familyRoles">家庭角色</option>
-      <option value="communication">溝通策略</option>
-    </select>
-    <input id="dbKeyword" placeholder="輸入關鍵字，例如：科技、溝通、焦慮">
-    <button id="dbSearchBtn">搜尋資料庫</button>
-  </div>
-  <div class="db-results" id="dbResults"></div>
-  <p class="database-note">資料庫採分類生成與可搜尋設計，未來可繼續增加內容。職涯與關係分析屬於自我探索工具，不取代專業職涯諮詢、心理支持或家庭治療。</p>
-</section>
 
-<section class="panel earth-section">
-  <span class="house-label">地球人生資料庫</span>
-  <h2>職業 × 工作 × 情緒 × 事件數字牌</h2>
-  <p class="meaning">每張 00–99 數字牌會連結地球職業、工作方式、賺錢模式、情緒狀態與人生事件，作為職涯和生活探索工具。</p>
-  
+
+
+
+
+
+<section class="panel control-panel section-anchor" id="calculator"><div class="section-kicker"><span>01</span>輸入生日，建立個人六芒星</div>
+<div class="controls"><div><label for="birthday">出生日期</label><input id="birthday" type="date" value="2026-07-17"/></div><button id="generateBtn" type="button">生成六芒星人格</button></div>
+<button class="draw" id="drawBtn" type="button">隨機抽取 00–99 宇宙卡</button>
+</section><section aria-label="功能總覽" class="dashboard">
+<a href="#star-map"><span>01</span><b>六芒星命盤</b><small>國曆與農曆雙三角分析</small></a>
+<a href="#people"><span>02</span><b>多人關係</b><small>相生相剋與溝通方向</small></a>
+<a href="#database"><span>03</span><b>人生資料庫</b><small>職業、技能、情緒與事件</small></a>
+<a href="#daily"><span>04</span><b>每日探索</b><small>1、3、6、9 張牌陣</small></a>
+</section><section class="layout" id="star-map">
+<article class="panel triangle-box">
+<div style="width:100%">
+<div class="triangle">
+<svg aria-hidden="true" viewbox="0 0 500 500">
+<defs><lineargradient id="g1" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#59d0ff"></stop><stop offset="1" stop-color="#f2ca70"></stop></lineargradient><lineargradient id="g2" x1="0" x2="1" y1="1" y2="0"><stop offset="0" stop-color="#936fff"></stop><stop offset="1" stop-color="#f2ca70"></stop></lineargradient></defs>
+<polygon fill="rgba(89,208,255,.06)" points="250,38 52,382 448,382" stroke="url(#g1)" stroke-width="4"></polygon>
+<polygon fill="rgba(147,111,255,.06)" points="52,118 448,118 250,462" stroke="url(#g2)" stroke-width="4"></polygon>
+<circle cx="250" cy="250" fill="rgba(242,202,112,.09)" r="62" stroke="rgba(242,202,112,.5)" stroke-width="3"></circle>
+</svg>
+<div class="calendar-label solar-label">國曆正三角形</div>
+<div class="calendar-label lunar-label">農曆倒三角形</div>
+<div class="node body-node solar-node"><strong id="bodyValue">24/6</strong><b>國曆身體</b><small id="bodyShort">外在行動</small></div>
+<div class="node mind-node solar-node"><strong id="mindValue">30/3</strong><b>國曆大腦</b><small id="mindShort">思考判斷</small></div>
+<div class="node soul-node solar-node"><strong id="soulValue">57/12/3</strong><b>國曆靈魂</b><small id="soulShort">內在動機</small></div>
+<div class="node lunar-body-node lunar-node"><strong id="lunarBodyValue">26/8</strong><b>農曆身體</b><small id="lunarBodyShort">深層行動</small></div>
+<div class="node lunar-mind-node lunar-node"><strong id="lunarMindValue">34/7</strong><b>農曆大腦</b><small id="lunarMindShort">潛意識思考</small></div>
+<div class="node lunar-soul-node lunar-node"><strong id="lunarSoulValue">93/12/3</strong><b>農曆靈魂</b><small id="lunarSoulShort">靈魂本質</small></div>
+<div class="node center-node"><strong id="starValue">6</strong><b>六芒星核心</b><small id="starShort">雙曆融合</small></div>
+</div>
+<div class="lunar-date">農曆生日：<b id="lunarDateText">自動轉換中</b></div>
+</div>
+</article>
+<article class="panel results">
+<div class="analysis-card"><h3>國曆正三角形</h3><p id="solarTriangleAnalysis"></p></div>
+<div class="analysis-card"><h3>農曆倒三角形</h3><p id="lunarTriangleAnalysis"></p></div>
+<div class="analysis-card positive"><h3>六芒星正向人格</h3><p id="positiveAnalysis"></p></div>
+<div class="analysis-card negative"><h3>六芒星未覺醒人格</h3><p id="shadowAnalysis"></p></div>
+<div class="analysis-card summary"><h3>六芒星整合與成長方向</h3><p id="growthAnalysis"></p></div>
+</article>
+</section><section class="panel fusion section-anchor" id="six-numbers"><div class="section-kicker"><span>02</span>六組數字的深度人格解讀</div>
+<h2>六組數字人格分析</h2>
+<div class="six-grid">
+<div class="analysis-card"><h3>國曆身體數字</h3><p id="bodyAnalysis"></p><div class="chips" id="bodyChips"></div></div>
+<div class="analysis-card"><h3>農曆身體數字</h3><p id="lunarBodyAnalysis"></p><div class="chips" id="lunarBodyChips"></div></div>
+<div class="analysis-card"><h3>國曆大腦數字</h3><p id="mindAnalysis"></p><div class="chips" id="mindChips"></div></div>
+<div class="analysis-card"><h3>農曆大腦數字</h3><p id="lunarMindAnalysis"></p><div class="chips" id="lunarMindChips"></div></div>
+<div class="analysis-card"><h3>國曆靈魂數字</h3><p id="soulAnalysis"></p><div class="chips" id="soulChips"></div></div>
+<div class="analysis-card"><h3>農曆靈魂數字</h3><p id="lunarSoulAnalysis"></p><div class="chips" id="lunarSoulChips"></div></div>
+</div>
+</section><section class="card-section section-anchor" id="card"><div class="section-kicker"><span>03</span>查看核心宇宙數字卡</div>
+<article class="panel"><div class="cosmic-card"><div class="num" id="cardNumber">30</div><div class="title" id="cardTitle">創造・宇宙之源</div><div class="tag" id="cardTag">讓想法形成新的起點</div><div class="meta"><div><small>DNA 格局</small><b id="cardDNA">比肩</b></div><div><small>生命靈數</small><b id="cardLife">3</b></div><div><small>易經原型</small><b id="cardGua">震</b></div><div><small>能量狀態</small><b>覺醒中</b></div></div><div class="meaning" id="cardMeaning"></div><div class="chips" id="cardChips"></div></div></article>
+<article class="panel"><h2>數字計算說明</h2><p class="meaning">身體數字使用出生日期；當日期是 01–09 時，將月份與日期中的 0 移除後組成兩位數，例如 02/04 → 24。大腦數字為出生年月日八碼逐位加總。靈魂數字則將「月份化簡數＋大腦化簡數」與「日期化簡數＋大腦化簡數」分別化簡後組成兩位數。三角核心由身體、大腦、靈魂三個最終化簡數相加。</p><p class="note">本工具屬於你創作的 Universe 100 宇宙數字系統，用於卡牌、自我探索與故事角色設定，不是科學或醫療診斷。</p></article>
+</section><section class="panel house-section section-anchor" id="house"><div class="section-kicker"><span>04</span>出生年月日的房屋人格模型</div>
+<span class="house-label">生日房屋人格模型</span>
+<h2>出生年月日的房屋結構</h2>
+<p class="meaning">把出生日期想像成一棟房子：年份是地基，月份是格局，日期是門面，八碼總和是實際使用模式，月份與日期化簡數的組合則代表房子的身分象徵。</p>
+<div class="house-grid">
+<article class="house-card"><small>房子地基｜年四碼</small><strong id="houseFoundation">2026</strong><p id="houseFoundationText"></p></article>
+<article class="house-card"><small>房子格局｜月二碼</small><strong id="houseLayout">07</strong><p id="houseLayoutText"></p></article>
+<article class="house-card"><small>房子門面｜日二碼</small><strong id="houseFacade">17</strong><p id="houseFacadeText"></p></article>
+<article class="house-card"><small>房子使用模式｜八碼加總</small><strong id="houseUsage">25/7</strong><p id="houseUsageText"></p></article>
+<article class="house-card"><small>房子身分象徵｜月＋日期化簡</small><strong id="houseIdentity">56/11/2</strong><p id="houseIdentityText"></p></article>
+</div>
+<div class="house-summary" id="houseSummary"></div>
+</section><section class="panel people-section section-anchor" id="people"><div class="section-kicker"><span>05</span>多人相生相剋與職涯對照</div>
+<span class="house-label">相生相剋人物對照</span>
+<h2>多人相生相剋、互補與家庭關係分析</h2>
+<p class="meaning">輸入父母、兄弟姊妹、伴侶、朋友或工作夥伴的生日，按下「新增人物」後，系統會建立人物的出生年月日和相生相剋對照表，整理互補優勢、衝突來源與溝通方法。</p>
+<div class="people-form">
+<div><label for="personName">姓名或稱呼</label><input id="personName" maxlength="24" placeholder="例如：媽媽、哥哥、小美"/></div>
+<div><label for="personRelation">關係</label>
+<select id="personRelation">
+<option>家人</option><option>父親</option><option>母親</option><option>兄弟姊妹</option>
+<option>伴侶</option><option>朋友</option><option>同事</option><option>合作夥伴</option><option>其他</option>
+</select>
+</div>
+<div><label for="personBirthday">出生年月日</label><input id="personBirthday" type="date"/></div>
+<button id="addPersonBtn" type="button">新增人物</button>
+</div>
+<div class="people-actions">
+<button id="addCurrentPersonBtn" type="button">加入</button>
+<button id="clearPeopleBtn" type="button">清除全部人物</button>
+</div>
+<div class="same-birthday" id="sameBirthdayResult">加入人物後，系統會標示出生者，以及農曆對照表。</div>
+<div class="people-table-wrap">
+<table class="people-table">
+<thead><tr><th>人物</th><th>生日</th><th>門面</th><th>使用模式</th><th>身分象徵</th><th>DNA 格局</th><th>核心特質</th><th>操作</th></tr></thead>
+<tbody id="peopleTableBody"></tbody>
+</table>
+</div>
+<h3 style="margin-top:22px">相生相剋對照表</h3>
+<div class="relation-grid" id="relationGrid"><div class="empty">至少加入兩位人物後產生比較。</div></div>
+<h3 style="margin-top:22px">格局職業、賺錢與生活分析</h3>
+<div class="career-grid" id="careerGrid"><div class="empty">加入人物後顯示個別方向。</div></div>
+<p class="disclaimer">本分析是 Universe 100 原創自我探索模型，用來協助對話與理解差異。家庭衝突仍需根據實際行為、界線、資源與溝通處理，不能只依生日判斷誰對誰錯。</p>
+</section><section class="panel database-section section-anchor" id="database"><div class="section-kicker"><span>06</span>搜尋完整人生資料庫</div>
+<span class="house-label">Universe 100 完整資料庫</span>
+<h2>職業、技能、人格、情緒、事件與關係資料庫</h2>
+<p class="meaning">正三角形的身體、大腦、靈魂用來分析天賦、職業、技能與使命；倒三角形的身體、大腦、靈魂用來分析伴侶偏好、家庭角色與相處方式。</p>
+<div class="db-stats" id="dbStats"></div>
+<div class="triangle-analysis">
+<article class="triangle-panel">
+<h3>▲ 正三角｜身體 × 大腦 × 靈魂：天賦與使命</h3>
+<div id="positiveTriangleAnalysis">自行填寫輸入生日後自動產生。</div>
+</article>
+<article class="triangle-panel">
+<h3>▼ 倒三角｜身體 × 大腦 × 靈魂：伴侶與關係</h3>
+<div id="inverseTriangleAnalysis">自行填寫輸入生日後自動產生。</div>
+</article>
+</div>
+<div class="db-controls">
+<select id="dbType">
+<option value="professions">職業</option>
+<option value="skills">技能</option>
+<option value="traits">人格特質</option>
+<option value="emotions">情緒</option>
+<option value="events">人生事件</option>
+<option value="partnerTraits">伴侶特質</option>
+<option value="familyRoles">家庭角色</option>
+<option value="communication">溝通策略</option>
+</select>
+<input id="dbKeyword" placeholder="輸入關鍵字，例如：科技、溝通、焦慮"/>
+<button id="dbSearchBtn" type="button">搜尋資料庫</button>
+</div>
+<div class="db-results" id="dbResults"></div>
+<p class="database-note">資料庫採分類生成與可搜尋設計，未來可繼續增加內容。職涯與關係分析屬於自我探索工具，不取代專業職涯諮詢、心理支持或家庭治療。</p>
+</section><section class="panel earth-section section-anchor" id="earth"><div class="section-kicker"><span>07</span>生成職業、情緒與事件數字牌</div>
+<span class="house-label">地球人生資料庫</span>
+<h2>職業 × 工作 × 情緒 × 事件數字牌</h2>
+<p class="meaning">每張 00–99 數字牌會連結地球職業、工作方式、賺錢模式、情緒狀態與人生事件，作為職涯和生活探索工具。</p>
 <div class="earth-controls">
-  <div><label>宇宙數字</label><input id="earthNumber" type="number" min="0" max="99" value="53"></div>
-  <div><label>職業（自行填寫）</label><input id="earthCategory" placeholder="例如：小說家、護理師、AI 設計師"></div>
-  <div><label>目前情緒（自行填寫）</label><input id="earthEmotion" placeholder="例如：焦慮、期待、疲憊"></div>
-  <button id="earthRandomBtn">隨機數字牌</button>
-  <button id="earthGenerateBtn">生成數字牌</button>
+<div><label>喜歡數字</label><input id="earthNumber" max="99" min="0" type="number" value="53"/></div>
+<div><label>職業（自行填寫）</label><input id="earthCategory" placeholder="例如：小說家、護理師、AI 設計師"/></div>
+<div><label>目前情緒（自行填寫）</label><input id="earthEmotion" placeholder="例如：焦慮、期待、疲憊"/></div>
+<button id="earthRandomBtn" type="button">隨機數字牌</button>
+<button id="earthGenerateBtn" type="button">生成數字牌</button>
 </div>
 <article class="earth-card" id="earthCard"></article>
-  <h3 style="margin-top:22px">地球職業分類總覽</h3>
-  <div class="profession-list" id="professionList"></div>
-  <h3 style="margin-top:22px">最近生成紀錄</h3>
-  <div class="earth-log" id="earthLog"><div class="empty">尚未生成紀錄。</div></div>
-</section>
-
-<section class="panel daily-section">
-  <h2>每日抽卡系統</h2>
-  <div class="spread-buttons" id="spreadButtons">
-    <button data-count="1" class="active">1 張｜每日探索</button>
-    <button data-count="3">3 張｜三階段探索</button>
-    <button data-count="6">6 張｜六芒星探索</button>
-    <button data-count="9">9 張｜九宮探索</button>
-  </div>
-  <p class="spread-info" id="spreadInfo">每日探索：抽出一張牌，觀察今天最重要的能量、提醒與行動方向。</p>
-  <div class="draw-grid one" id="dailyDrawGrid"></div>
-  <div class="daily-actions"><button class="primary" id="dailyDrawBtn">抽取今日牌陣</button><button class="clear" id="resetDailyBtn">清除今日紀錄</button></div>
-  <p class="privacy-note">每日牌陣會儲存在目前瀏覽器中；同一天選擇相同牌陣時，會保留原本結果，避免重複抽取。</p>
-</section>
-<section class="panel message-section">
-  <h2>匿名留言板</h2>
-  <form class="message-form" id="messageForm">
-    <input id="messageName" maxlength="20" placeholder="匿名名稱（可留空）">
-    <textarea id="messageText" maxlength="500" required placeholder="寫下你的抽卡感受、今日探索或宇宙訊息……"></textarea>
-    <button type="submit">匿名發布留言</button>
-  </form>
-  <p class="privacy-note">此單檔版本的留言只儲存在你的瀏覽器，其他使用者看不到。要做真正多人共用留言板，需要再連接 Firebase、Supabase 或自建後端資料庫。</p>
-  <div class="message-list" id="messageList"></div>
-</section>
-</main><footer>Universe 100 Cosmic Number System</footer>
+<h3 style="margin-top:22px">地球職業分類總覽</h3>
+<div class="profession-list" id="professionList"></div>
+<h3 style="margin-top:22px">最近生成紀錄</h3>
+<div class="earth-log" id="earthLog"><div class="empty">尚未生成紀錄。</div></div>
+</section><section class="panel daily-section section-anchor" id="daily"><div class="section-kicker"><span>08</span>建立你的每日牌陣</div>
+<h2>每日抽卡系統</h2>
+<div class="spread-buttons" id="spreadButtons">
+<button class="active" data-count="1" type="button">1 張｜每日探索</button>
+<button data-count="3" type="button">3 張｜三階段探索</button>
+<button data-count="6" type="button">6 張｜六芒星探索</button>
+<button data-count="9" type="button">9 張｜九宮探索</button>
+</div>
+<p class="spread-info" id="spreadInfo">每日探索：抽出一張牌，觀察今天最重要的能量、提醒與行動方向。</p>
+<div class="draw-grid one" id="dailyDrawGrid"></div>
+<div class="daily-actions"><button class="primary" id="dailyDrawBtn" type="button">抽取今日牌陣</button><button class="clear" id="resetDailyBtn" type="button">清除今日紀錄</button></div>
+<p class="privacy-note">每日牌陣會儲存在目前瀏覽器中；同一天選擇相同牌陣時，會保留原本結果，避免重複抽取。</p>
+</section><section class="panel explore-flow section-anchor" id="explore"><div class="section-kicker"><span>09</span>完成八階段宇宙探索</div>
+<h2>宇宙探索流程</h2>
+<p class="spread-info">透過抽卡、觀察、閱讀與書寫，把卡牌訊息轉化為可實踐的下一步。</p>
+<div class="flow-track" id="flowTrack">
+<div class="flow-step active">1 抽卡</div><div class="flow-step">2 觀察</div><div class="flow-step">3 閱讀角色</div><div class="flow-step">4 回答問題</div><div class="flow-step">5 分享討論</div><div class="flow-step">6 記錄日誌</div><div class="flow-step">7 設定下一步</div><div class="flow-step">8 完成探索</div>
+</div>
+<div class="explore-stage active" data-stage="0">
+<h3>抽卡</h3><p>先放慢呼吸，在心中想一個目前想探索的問題，再抽出一張宇宙數字卡。</p>
+<button id="exploreDrawBtn" type="button">抽取探索卡</button>
+</div>
+<div class="explore-stage" data-stage="1">
+<h3>觀察</h3><div class="explore-card"><div class="big-number" id="exploreNumber">00</div><div><h3 id="exploreTitle">宇宙之源</h3><p id="exploreObservePrompt">先不急著解釋，觀察這個數字、名稱與第一感受。</p><textarea id="observeNote" placeholder="我第一眼看見什麼？有什麼感覺、聯想或畫面？"></textarea></div></div>
+</div>
+<div class="explore-stage" data-stage="2">
+<h3>閱讀角色</h3><div class="prompt-box" id="exploreRoleText"></div><textarea id="roleNote" placeholder="這個角色最像我生活中的哪一部分？"></textarea>
+</div>
+<div class="explore-stage" data-stage="3">
+<h3>回答問題</h3><div class="prompt-box" id="exploreQuestion"></div><textarea id="answerNote" placeholder="寫下你的答案，不需要完美。"></textarea>
+</div>
+<div class="explore-stage" data-stage="4">
+<h3>分享討論</h3><p>可以把感受說給朋友、家人或探索夥伴，也可以只寫給自己。</p><textarea id="shareNote" placeholder="我想分享的重點是……"></textarea>
+</div>
+<div class="explore-stage" data-stage="5">
+<h3>記錄日誌</h3><textarea id="journalNote" placeholder="今天發生了什麼？這張牌讓我看見什麼？哪些想法值得留下？" rows="7"></textarea>
+</div>
+<div class="explore-stage" data-stage="6">
+<h3>設定下一步</h3><div class="prompt-box">把洞察變成一個小而明確的行動。最好能在 24 小時內開始。</div><input id="nextAction" placeholder="我的下一步是……"/><input id="actionTime" type="date"/>
+</div>
+<div class="explore-stage" data-stage="7">
+<h3>完成探索</h3><div class="explore-summary" id="exploreSummary"></div><button id="saveExplorationBtn" type="button">儲存本次探索</button><button class="clear" id="restartExplorationBtn" type="button">開始新的探索</button>
+</div>
+<div class="explore-nav"><button class="clear" disabled="" id="prevExploreBtn" type="button">上一步</button><button disabled="" id="nextExploreBtn" type="button">下一步</button></div>
+<p class="privacy-note">探索內容只儲存在目前瀏覽器，不會自動上傳。</p>
+</section><section class="panel message-section section-anchor" id="message"><div class="section-kicker"><span>10</span>保存你的探索留言</div>
+<h2>匿名留言板</h2>
+<form class="message-form" id="messageForm">
+<input id="messageName" maxlength="20" placeholder="匿名名稱（可留空）"/>
+<textarea id="messageText" maxlength="500" placeholder="寫下你的抽卡感受、今日探索或宇宙訊息……" required=""></textarea>
+<button type="submit">匿名發布留言</button>
+</form>
+<p class="privacy-note">此單檔版本的留言只儲存在你的瀏覽器，其他使用者看不到。要做真正多人共用留言板，需要再連接 Firebase、Supabase 或自建後端資料庫。</p>
+<div class="message-list" id="messageList"></div>
+</section></main><footer><div><b>Universe 100</b><span>原創宇宙數字探索系統 · 資料僅供自我探索與創作使用</span></div></footer>
 <script>
 const A={0:{name:'宇宙之源',gua:'無極',traits:['空性','包容','潛能'],light:'擁有高度包容力，能從空白中創造新的可能。',shadow:'容易失去方向，停留在等待或空想中。'},1:{name:'開創者',gua:'乾',traits:['意志','獨立','領導'],light:'敢於開始，能以清楚意志帶領自己與他人。',shadow:'容易強勢、自我中心，忽略他人的節奏。'},2:{name:'協調者',gua:'坤',traits:['合作','感知','耐心'],light:'擅長傾聽、連結與維持關係平衡。',shadow:'容易依賴認同，壓抑自己或猶豫不決。'},3:{name:'創造者',gua:'震',traits:['表達','創意','樂觀'],light:'善於表達與創作，能用想法感染他人。',shadow:'容易分心、情緒化，執行力不穩定。'},4:{name:'建築者',gua:'艮',traits:['秩序','穩定','紀律'],light:'能將想法落實為制度與長期成果。',shadow:'容易固執、保守，害怕改變或失去控制。'},5:{name:'探索者',gua:'巽',traits:['自由','冒險','變動'],light:'適應力強，能在變化中找到新道路。',shadow:'容易衝動、厭倦與缺乏持續性。'},6:{name:'守護者',gua:'坎',traits:['責任','關懷','家庭'],light:'重視承諾，願意建立安全與照顧他人。',shadow:'容易過度操心、控制或犧牲自己。'},7:{name:'智者',gua:'離',traits:['洞察','研究','內省'],light:'能深入觀察，理解事物背後的規律。',shadow:'容易封閉、懷疑與過度分析。'},8:{name:'經營者',gua:'兌',traits:['管理','成就','資源'],light:'擅長整合資源，把目標轉化為實際成果。',shadow:'容易追求權力、比較與控制。'},9:{name:'圓滿導師',gua:'融合',traits:['博愛','完成','傳承'],light:'能整合經驗，療癒自己並啟發他人。',shadow:'容易理想化、過度承擔或難以放下。'}};
 const groups={'正官':[19,26,34,43,62,78,87,91],'正印':[14,28,39,41,67,76,82,93],'七煞':[17,23,32,46,64,71,89,98],'偏印':[16,29,38,47,61,74,83,92],'傷官':[12,21,37,48,69,73,84,96],'劫財':[18,24,36,42,63,79,81,97],'食神':[13,27,31,49,68,72,86,94]};
@@ -652,4 +691,4 @@ function saveExploration(){if(!explorationCard)return;const item={time:new Date(
 function restartExploration(){explorationCard=null;explorationFields.forEach(id=>document.getElementById(id).value='');document.getElementById('saveExplorationBtn').textContent='儲存本次探索';showExplorationStage(0)}
 document.getElementById('exploreDrawBtn').addEventListener('click',drawExplorationCard);document.getElementById('prevExploreBtn').addEventListener('click',()=>showExplorationStage(explorationStage-1));document.getElementById('nextExploreBtn').addEventListener('click',()=>showExplorationStage(explorationStage+1));document.getElementById('saveExplorationBtn').addEventListener('click',saveExploration);document.getElementById('restartExplorationBtn').addEventListener('click',restartExploration);showExplorationStage(0);
 
-</script></body></html>
+</script><a aria-label="回到頂端" class="back-top" href="#top">↑</a></body></html>
