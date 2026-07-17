@@ -54,6 +54,62 @@ footer{margin-top:20px;border-top:1px solid var(--line);background:rgba(0,0,0,.1
 .back-top{position:fixed;right:22px;bottom:22px;width:44px;height:44px;display:grid;place-items:center;border-radius:50%;background:linear-gradient(135deg,var(--violet),var(--blue));color:#fff;text-decoration:none;font-weight:900;box-shadow:0 12px 35px rgba(0,0,0,.35);z-index:60}
 @media(max-width:980px){.hero-inner{grid-template-columns:1fr}.hero-symbol{display:none}.dashboard{grid-template-columns:1fr 1fr}.control-panel{grid-template-columns:1fr}.nav-inner{align-items:flex-start;padding:12px 0;flex-direction:column}.site-nav{position:relative}.nav-links{width:100%}html{scroll-padding-top:16px}.section-anchor{scroll-margin-top:16px}}
 @media(max-width:620px){.site-hero{padding:54px 18px 38px}.site-hero h1{font-size:2.55rem}.dashboard{grid-template-columns:1fr}.control-panel .controls{grid-template-columns:1fr}.panel{padding:18px;border-radius:19px}.triangle-box{overflow:hidden}.triangle{transform:scale(.9)}.nav-links a{padding:9px}.back-top{right:14px;bottom:14px}.section-kicker{line-height:1.4}}
+
+
+document.getElementById('birthday').addEventListener('change',e=>{
+ const dbDate=document.getElementById('dbPersonBirthday');
+ if(dbDate && !document.getElementById('dbPersonName').value.trim()){
+   dbDate.value=e.target.value;
+ }
+});
+
+/* ===== Universe 100 今日運勢中心 ===== */
+.fortune-center{margin-top:22px;overflow:hidden;position:relative}
+.fortune-center::before{content:"";position:absolute;inset:-40% auto auto -10%;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(242,202,112,.14),transparent 68%);pointer-events:none}
+.fortune-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;flex-wrap:wrap}
+.fortune-title h2{margin:6px 0 8px;font-size:clamp(1.6rem,3vw,2.35rem)}
+.fortune-title p{margin:0;color:var(--muted);line-height:1.7}
+.fortune-date-card{min-width:230px;padding:15px 17px;border-radius:16px;border:1px solid rgba(242,202,112,.35);background:rgba(242,202,112,.08)}
+.fortune-date-card small{display:block;color:var(--muted)}
+.fortune-date-card strong{display:block;color:var(--gold);font-size:1.25rem;margin-top:5px}
+.fortune-inputs{display:grid;grid-template-columns:1fr 1fr auto;gap:10px;align-items:end;margin-top:18px}
+.fortune-inputs label{display:block;color:var(--muted);margin-bottom:7px}
+.fortune-inputs input{width:100%;padding:13px;border:1px solid var(--line);border-radius:12px;background:#0c1224;color:#fff;font:inherit}
+.fortune-inputs button{padding:13px 18px;border:0;border-radius:12px;background:linear-gradient(90deg,var(--gold),#fff0a9);font-weight:900;cursor:pointer}
+.fortune-overview{display:grid;grid-template-columns:1.1fr .9fr;gap:14px;margin-top:16px}
+.fortune-main,.fortune-card{padding:18px;border-radius:18px;border:1px solid var(--line);background:rgba(255,255,255,.04)}
+.fortune-main-number{font-size:4rem;line-height:1;font-weight:1000;color:var(--gold)}
+.fortune-main h3,.fortune-card h3{margin:8px 0}
+.fortune-main p,.fortune-card p{line-height:1.75;margin:7px 0}
+.fortune-score-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:14px}
+.fortune-score{padding:14px 10px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.035);text-align:center}
+.fortune-score b{display:block;margin-bottom:7px}.fortune-score strong{font-size:1.3rem;color:var(--gold)}
+.fortune-bars{display:grid;gap:10px;margin-top:13px}
+.fortune-bar{display:grid;grid-template-columns:64px 1fr 42px;gap:10px;align-items:center}
+.fortune-track{height:9px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}
+.fortune-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--violet),var(--blue),var(--gold))}
+.fortune-lucky{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+.fortune-lucky div{padding:13px;border-radius:13px;border:1px solid var(--line);background:rgba(255,255,255,.035)}
+.fortune-lucky small{display:block;color:var(--muted);margin-bottom:5px}
+.fortune-actions{display:flex;gap:10px;margin-top:14px}.fortune-actions button{padding:12px 16px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.06);color:#fff;font-weight:800;cursor:pointer}
+@media(max-width:950px){.fortune-overview{grid-template-columns:1fr}.fortune-score-grid{grid-template-columns:1fr 1fr}.fortune-lucky{grid-template-columns:1fr 1fr}.fortune-inputs{grid-template-columns:1fr}}
+@media(max-width:520px){.fortune-score-grid,.fortune-lucky{grid-template-columns:1fr}}
+
+
+.people-status{margin:10px 0 14px;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:rgba(89,208,255,.07);color:var(--muted);line-height:1.6}
+.people-status.success{color:var(--good);border-color:rgba(140,240,197,.35);background:rgba(140,240,197,.08)}
+.people-status.error{color:var(--shadow);border-color:rgba(255,177,193,.35);background:rgba(255,177,193,.08)}
+
+
+.db-person-query{display:grid;grid-template-columns:1fr 1fr auto;gap:10px;align-items:end;margin:16px 0}
+.db-person-query label{display:block;color:var(--muted);margin-bottom:7px}
+.db-person-query input{width:100%;padding:13px;border:1px solid var(--line);border-radius:12px;background:#0c1224;color:#fff;font:inherit}
+.db-person-query button{padding:13px 18px;border:0;border-radius:12px;background:linear-gradient(90deg,var(--gold),#fff0a9);font-weight:900;cursor:pointer}
+.db-person-status{margin:10px 0 14px;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:rgba(89,208,255,.07);color:var(--muted)}
+.db-person-status.success{color:var(--good);border-color:rgba(140,240,197,.35);background:rgba(140,240,197,.08)}
+.db-person-status.error{color:var(--shadow);border-color:rgba(255,177,193,.35);background:rgba(255,177,193,.08)}
+@media(max-width:760px){.db-person-query{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body id="top">
@@ -75,7 +131,7 @@ footer{margin-top:20px;border-top:1px solid var(--line);background:rgba(0,0,0,.1
 <div class="nav-inner">
 <a class="brand" href="#top">Universe 100</a>
 <div class="nav-links">
-<a href="#calculator">六芒星分析</a>
+<a href="#fortune">今天運勢</a><a href="#calculator">六芒星分析</a>
 <a href="#card">宇宙卡</a>
 <a href="#people">人物關係</a>
 <a href="#database">完整資料庫</a>
@@ -101,11 +157,34 @@ footer{margin-top:20px;border-top:1px solid var(--line);background:rgba(0,0,0,.1
 <div class="controls"><div><label for="birthday">出生日期</label><input id="birthday" type="date" value="2026-07-17"/></div><button id="generateBtn" type="button">生成六芒星人格</button></div>
 <button class="draw" id="drawBtn" type="button">隨機抽取 00–99 宇宙卡</button>
 </section><section aria-label="功能總覽" class="dashboard">
+<a href="#fortune"><span>00</span><b>今天運勢</b><small>今天日期＋生日＋宇宙數字</small></a>
 <a href="#star-map"><span>01</span><b>六芒星命盤</b><small>國曆與農曆雙三角分析</small></a>
 <a href="#people"><span>02</span><b>多人關係</b><small>相生相剋與溝通方向</small></a>
 <a href="#database"><span>03</span><b>人生資料庫</b><small>職業、技能、情緒與事件</small></a>
 <a href="#daily"><span>04</span><b>每日探索</b><small>1、3、6、9 張牌陣</small></a>
-</section><section class="layout" id="star-map">
+</section>
+<section class="panel fortune-center section-anchor" id="fortune">
+  <div class="section-kicker"><span>00</span>Universe 100 今日運勢中心</div>
+  <div class="fortune-head">
+    <div class="fortune-title">
+      <h2>今天日期＋你的生日＋宇宙數字</h2>
+      <p>每天開啟網站，自動依照瀏覽器今天日期、出生日期與每日宇宙數字，產生整體、工作、財運、感情、學習與行動建議。</p>
+    </div>
+    <div class="fortune-date-card"><small>今天日期</small><strong id="fortuneToday">讀取中</strong></div>
+  </div>
+  <div class="fortune-inputs">
+    <div><label for="fortuneBirthday">你的生日</label><input id="fortuneBirthday" type="date" value="2026-07-17"></div>
+    <div><label for="fortuneGoal">目前想要完成的目標（自行填寫）</label><input id="fortuneGoal" placeholder="例如：完成小說第一章、找到新工作、開始運動"></div>
+    <button id="fortuneGenerateBtn" type="button">產生今日分析</button>
+  </div>
+  <div id="fortuneResult"></div>
+  <div class="fortune-actions">
+    <button id="fortuneTodayBtn" type="button">更新為今天</button>
+    <button id="fortuneSaveBtn" type="button">儲存今日運勢</button>
+  </div>
+  <p class="privacy-note">今日運勢屬於 Universe 100 原創自我探索內容，結果會固定依當日日期計算；目標與紀錄只儲存在目前瀏覽器。</p>
+</section>
+<section class="layout" id="star-map">
 <article class="panel triangle-box">
 <div style="width:100%">
 <div class="triangle">
@@ -176,9 +255,10 @@ footer{margin-top:20px;border-top:1px solid var(--line);background:rgba(0,0,0,.1
 <button id="addPersonBtn" type="button">新增人物</button>
 </div>
 <div class="people-actions">
-<button id="addCurrentPersonBtn" type="button">加入</button>
+<button id="addCurrentPersonBtn" type="button">加入本人</button>
 <button id="clearPeopleBtn" type="button">清除全部人物</button>
 </div>
+<div id="peopleStatus" class="people-status" role="status" aria-live="polite">請輸入姓名、關係與出生年月日，再按「新增人物」。</div>
 <div class="same-birthday" id="sameBirthdayResult">加入人物後，系統會標示出生者，以及農曆對照表。</div>
 <div class="people-table-wrap">
 <table class="people-table">
@@ -196,13 +276,25 @@ footer{margin-top:20px;border-top:1px solid var(--line);background:rgba(0,0,0,.1
 <h2>職業、技能、人格、情緒、事件與關係資料庫</h2>
 <p class="meaning">正三角形的身體、大腦、靈魂用來分析天賦、職業、技能與使命；倒三角形的身體、大腦、靈魂用來分析伴侶偏好、家庭角色與相處方式。</p>
 <div class="db-stats" id="dbStats"></div>
+<div class="db-person-query">
+  <div>
+    <label for="dbPersonName">人物姓名或稱呼</label>
+    <input id="dbPersonName" maxlength="24" placeholder="例如：本人、媽媽、小美"/>
+  </div>
+  <div>
+    <label for="dbPersonBirthday">人物出生年月日</label>
+    <input id="dbPersonBirthday" type="date" value="2026-07-17"/>
+  </div>
+  <button id="dbPersonAnalyzeBtn" type="button">查詢人物分析</button>
+</div>
+<div id="dbPersonStatus" class="db-person-status" role="status" aria-live="polite">輸入人物出生年月日後，按「查詢人物分析」。</div>
 <div class="triangle-analysis">
 <article class="triangle-panel">
-<h3>▲ 正三角｜身體 × 大腦 × 靈魂：天賦與使命</h3>
+<h3>▲ 正三角｜個性分析 × 思考行為 × 執行結果：天賦與使命</h3>
 <div id="positiveTriangleAnalysis">自行填寫輸入生日後自動產生。</div>
 </article>
 <article class="triangle-panel">
-<h3>▼ 倒三角｜身體 × 大腦 × 靈魂：伴侶與關係</h3>
+<h3>▼ 倒三角｜潛意識個性 × 潛意識思考 × 潛意識執行結果：伴侶與關係</h3>
 <div id="inverseTriangleAnalysis">自行填寫輸入生日後自動產生。</div>
 </article>
 </div>
@@ -222,14 +314,14 @@ footer{margin-top:20px;border-top:1px solid var(--line);background:rgba(0,0,0,.1
 </div>
 <div class="db-results" id="dbResults"></div>
 <p class="database-note">資料庫採分類生成與可搜尋設計，未來可繼續增加內容。職涯與關係分析屬於自我探索工具，不取代專業職涯諮詢、心理支持或家庭治療。</p>
-</section><section class="panel earth-section section-anchor" id="earth"><div class="section-kicker"><span>07</span>生成職業、情緒與事件數字牌</div>
+</section><section class="panel earth-section section-anchor" id="earth"><div class="section-kicker"><span>07</span>生成職業、目標與事件數字牌</div>
 <span class="house-label">地球人生資料庫</span>
-<h2>職業 × 工作 × 情緒 × 事件數字牌</h2>
-<p class="meaning">每張 00–99 數字牌會連結地球職業、工作方式、賺錢模式、情緒狀態與人生事件，作為職涯和生活探索工具。</p>
+<h2>職業 × 工作 × 目標 × 事件數字牌</h2>
+<p class="meaning">每張 00–99 數字牌會連結地球職業、工作方式、賺錢模式、目標狀態與人生事件，作為職涯和生活探索工具。</p>
 <div class="earth-controls">
 <div><label>喜歡數字</label><input id="earthNumber" max="99" min="0" type="number" value="53"/></div>
 <div><label>職業（自行填寫）</label><input id="earthCategory" placeholder="例如：小說家、護理師、AI 設計師"/></div>
-<div><label>目前情緒（自行填寫）</label><input id="earthEmotion" placeholder="例如：焦慮、期待、疲憊"/></div>
+<div><label>目前想要完成的目標（自行填寫）</label><input id="earthGoal" placeholder="例如：完成作品、轉職、改善生活習慣"/></div>
 <button id="earthRandomBtn" type="button">隨機數字牌</button>
 <button id="earthGenerateBtn" type="button">生成數字牌</button>
 </div>
@@ -359,7 +451,7 @@ function generate(){
  const gr=`六芒星成長方向是讓國曆人格負責現實選擇，農曆人格負責內在校準。中央核心 ${reductionChain(starRaw)} 提醒你，以「${A[star].traits.join('、')}」整合兩套節奏；不是壓抑其中一方，而是讓外在行動與內在本質彼此支持。`;
  document.getElementById('positiveAnalysis').textContent=pos;document.getElementById('shadowAnalysis').textContent=sh;document.getElementById('growthAnalysis').textContent=gr;renderHouseModel(y,m,d);renderCard(starRaw%100)
 }
-document.getElementById('generateBtn').addEventListener('click',()=>{generate();updateTriangleLifeAnalysis();});document.getElementById('drawBtn').addEventListener('click',()=>renderCard(Math.floor(Math.random()*100)));generate();document.getElementById('personBirthday').value='1990-05-07';
+document.getElementById('generateBtn').addEventListener('click',()=>{generate();updateTriangleLifeAnalysis();});document.getElementById('drawBtn').addEventListener('click',()=>renderCard(Math.floor(Math.random()*100)));generate();document.getElementById('personBirthday').value='2026-07-17';
 
 
 
@@ -387,47 +479,90 @@ function seededPick(arr,seed,count){
  for(let i=0;i<count;i++)result.push(arr[(seed*31+i*17+seed*seed)%arr.length]);
  return [...new Set(result)];
 }
-function updateTriangleLifeAnalysis(){
- const date=document.getElementById('birthday').value;
- if(!date)return;
+function setDbPersonStatus(message,type=''){
+ const el=document.getElementById('dbPersonStatus');
+ if(!el)return;
+ el.textContent=message;
+ el.className='db-person-status'+(type?' '+type:'');
+}
+function updateTriangleLifeAnalysis(dateValue,personName){
+ const date=dateValue||document.getElementById('dbPersonBirthday')?.value||document.getElementById('birthday').value;
+ const name=(personName||document.getElementById('dbPersonName')?.value||'此人物').trim()||'此人物';
+ if(!date){
+   setDbPersonStatus('請先選擇人物出生年月日。','error');
+   return false;
+ }
+ const check=new Date(date+'T12:00:00');
+ if(Number.isNaN(check.getTime())){
+   setDbPersonStatus('出生年月日格式不正確，請重新選擇。','error');
+   return false;
+ }
  const [y,m,d]=date.split('-').map(Number);
- const digits=`${String(y).padStart(4,'0')}${String(m).padStart(2,'0')}${String(d).padStart(2,'0')}`;
- const brainRaw=[...digits].reduce((a,b)=>a+Number(b),0);
- const bodyRaw=d<10?Number(`${String(m).padStart(2,'0')}${String(d).padStart(2,'0')}`.replaceAll('0','')):d;
- const brain=reduce(brainRaw),body=reduce(bodyRaw);
- const soulRaw=Number(`${reduce(m)+brain}${reduce(d)+brain}`),soul=reduce(soulRaw);
- const seed=body*100+brain*10+soul;
+ const solar=calcTriangle(y,m,d);
+ const ld=solarToLunar(y,m,d);
+ const lunar=calcTriangle(ld.year,ld.month,ld.day);
 
- const jobs=seededPick(fullLifeDatabase.professions,seed,8);
- const skills=seededPick(fullLifeDatabase.skills,seed+1,8);
- const traits=seededPick(fullLifeDatabase.traits,seed+2,6);
- const partners=seededPick(fullLifeDatabase.partnerTraits,seed+3,8);
- const roles=seededPick(fullLifeDatabase.familyRoles,seed+4,4);
- const comms=seededPick(fullLifeDatabase.communication,seed+5,5);
+ const solarSeed=solar.body*100+solar.mind*10+solar.soul;
+ const lunarSeed=lunar.body*100+lunar.mind*10+lunar.soul;
+
+ const jobs=seededPick(fullLifeDatabase.professions,solarSeed,8);
+ const skills=seededPick(fullLifeDatabase.skills,solarSeed+1,8);
+ const traits=seededPick(fullLifeDatabase.traits,solarSeed+2,6);
+ const partners=seededPick(fullLifeDatabase.partnerTraits,lunarSeed+3,8);
+ const roles=seededPick(fullLifeDatabase.familyRoles,lunarSeed+4,4);
+ const comms=seededPick(fullLifeDatabase.communication,lunarSeed+5,5);
 
  document.getElementById('positiveTriangleAnalysis').innerHTML=`
-   <p><b>身體 ${bodyRaw}/${body}：</b>代表執行與工作習慣。</p>
-   <p><b>大腦 ${brainRaw}/${brain}：</b>代表思考、學習與解題方式。</p>
-   <p><b>靈魂 ${reductionChain(soulRaw)}：</b>代表熱情、技能使命與長期投入。</p>
+   <p><b>查詢人物：</b>${safeText(name)}｜國曆 ${date}</p>
+   <p><b>個性分析 ${reductionChain(solar.bodyRaw)}：</b>代表外在個性、工作習慣與第一反應。</p>
+   <p><b>思考行為 ${reductionChain(solar.mindRaw)}：</b>代表思考、學習、判斷與解題方式。</p>
+   <p><b>執行結果 ${reductionChain(solar.soulRaw)}：</b>代表目標落實、技能輸出與長期成果。</p>
    <p><b>推薦職業：</b></p><ul>${jobs.map(x=>`<li>${x.name}｜${x.industry}</li>`).join('')}</ul>
    <p><b>核心技能：</b>${skills.map(x=>x.name).join('、')}</p>
    <p><b>人格優勢：</b>${traits.join('、')}</p>`;
 
  document.getElementById('inverseTriangleAnalysis').innerHTML=`
-   <p><b>倒三角身體 ${bodyRaw}/${body}：</b>代表你在親密關係中的安全感、接觸方式與生活習慣。</p>
-   <p><b>倒三角大腦 ${brainRaw}/${brain}：</b>代表你判斷伴侶、處理衝突與溝通的方式。</p>
-   <p><b>倒三角靈魂 ${reductionChain(soulRaw)}：</b>代表你真正渴望的愛、陪伴與長期關係。</p>
+   <p><b>查詢人物：</b>${safeText(name)}｜農曆 ${ld.display}</p>
+   <p><b>潛意識個性 ${reductionChain(lunar.bodyRaw)}：</b>代表親密關係中的安全感、接觸方式與生活習慣。</p>
+   <p><b>潛意識思考 ${reductionChain(lunar.mindRaw)}：</b>代表判斷伴侶、處理衝突與溝通的方式。</p>
+   <p><b>潛意識執行結果 ${reductionChain(lunar.soulRaw)}：</b>代表真正渴望的愛、陪伴與長期關係結果。</p>
    <p><b>理想伴侶特質：</b>${partners.join('、')}</p>
-   <p><b>你可能承擔的家庭角色：</b>${roles.join('、')}</p>
+   <p><b>可能承擔的家庭角色：</b>${roles.join('、')}</p>
    <p><b>相處與溝通建議：</b></p><ul>${comms.map(x=>`<li>${x.advice}</li>`).join('')}</ul>
-   <p><b>提醒：</b>伴侶適配應同時觀察價值觀、界線、責任感、溝通與實際行為。</p>`;
+   <p><b>提醒：</b>伴侶適配仍需同時觀察價值觀、界線、責任感、溝通與實際行為。</p>`;
+ setDbPersonStatus(`已完成 ${name} 的國曆正三角與農曆倒三角分析。`,'success');
+ return true;
 }
 function initFullLifeDatabase(){
  renderDbStats();
  document.getElementById('dbSearchBtn').addEventListener('click',searchFullDatabase);
  document.getElementById('dbKeyword').addEventListener('keydown',e=>{if(e.key==='Enter')searchFullDatabase()});
+ const analyzeBtn=document.getElementById('dbPersonAnalyzeBtn');
+ if(analyzeBtn){
+   analyzeBtn.addEventListener('click',()=>{
+     updateTriangleLifeAnalysis(
+       document.getElementById('dbPersonBirthday').value,
+       document.getElementById('dbPersonName').value
+     );
+   });
+ }
+ const dbDate=document.getElementById('dbPersonBirthday');
+ if(dbDate){
+   dbDate.addEventListener('change',e=>{
+     if(e.target.value)setDbPersonStatus(`已選擇生日：${e.target.value}，請按「查詢人物分析」。`);
+   });
+ }
+ const dbName=document.getElementById('dbPersonName');
+ if(dbName){
+   dbName.addEventListener('keydown',e=>{
+     if(e.key==='Enter'){e.preventDefault();analyzeBtn?.click()}
+   });
+ }
  searchFullDatabase();
- updateTriangleLifeAnalysis();
+ updateTriangleLifeAnalysis(
+   document.getElementById('dbPersonBirthday')?.value||'2026-07-17',
+   document.getElementById('dbPersonName')?.value||'本人'
+ );
 }
 
 const earthJobs={
@@ -475,25 +610,25 @@ function pick(arr,n,k,s=0){let r=[];for(let i=0;i<k;i++)r.push(arr[(n*37+s*13+i*
 function buildEarthCard(){
  let n=Math.max(0,Math.min(99,Number(document.getElementById('earthNumber').value)||0));
  let customJob=(document.getElementById('earthCategory').value||'尚未填寫職業').trim();
- let customEmotion=(document.getElementById('earthEmotion').value||'平靜').trim();
+ let customGoal=(document.getElementById('earthGoal').value||'完成今天最重要的一件事').trim();
  let code=String(n).padStart(2,'0'),a=Number(code[0]),b=Number(code[1]),life=reduce(n);
  let allJobs=Object.values(earthJobs).flat();
  let jobs=pick(allJobs,n,6,2);
  if(customJob && customJob!=='尚未填寫職業') jobs=[customJob,...jobs.filter(x=>x!==customJob)].slice(0,6);
  let events=pick(earthEvents,n,3,5);
- let knownEmotion=earthEmotions[customEmotion]||['提醒你注意目前內在狀態','可能影響判斷與溝通方式','先辨識事實、感受與需要，再做一個小行動'];
+ let knownGoal=['把目標拆成一個今天能開始的小步驟','若一次追求太多，容易分散注意力','先完成最小可行版本，再逐步改善'];
  document.getElementById('earthCard').innerHTML=`<div class="earth-head"><div class="earth-num">${code}</div><div><h3>${earthRoles[a][0]} × ${earthRoles[b][0]}</h3><p>${getDNA(n)}格｜生命靈數 ${life}｜自填職業：${customJob}</p></div></div><div class="earth-grid">
  <div class="earth-box"><h4>職業與天賦</h4><div class="job-tags">${jobs.map(x=>`<span class="job-tag">${x}</span>`).join('')}</div><p>外在偏向：${earthRoles[a][1]}；內在偏向：${earthRoles[b][1]}；核心偏向：${earthRoles[life][1]}。</p></div>
  <div class="earth-box"><h4>格局職業、賺錢與生活分析</h4><p>${earthRoles[life][2]}。輔助模式：${earthRoles[b][2]}。</p><p>建議把「${customJob}」發展成可重複的服務、產品、內容或流程。</p></div>
- <div class="earth-box"><h4>目前情緒｜${customEmotion}</h4><p><b>正向：</b>${knownEmotion[0]}</p><p><b>未覺醒：</b>${knownEmotion[1]}</p><p><b>調整：</b>${knownEmotion[2]}</p></div>
- <div class="earth-box"><h4>人生事件</h4><p>${events.join('、')}</p><p><b>探索任務：</b>思考如何在「${events[0]}」中運用數字 ${code} 的天賦，並調整「${customEmotion}」帶來的反應。</p></div></div>`;
+ <div class="earth-box"><h4>目前目標｜${safeText(customGoal)}</h4><p><b>推進方式：</b>${knownGoal[0]}</p><p><b>可能阻礙：</b>${knownGoal[1]}</p><p><b>今日行動：</b>${knownGoal[2]}</p></div>
+ <div class="earth-box"><h4>人生事件</h4><p>${events.join('、')}</p><p><b>探索任務：</b>思考如何在「${events[0]}」中運用數字 ${code} 的天賦，並調整「${customGoal}」帶來的反應。</p></div></div>`;
  let log=[];try{log=JSON.parse(localStorage.getItem(EARTH_KEY)||'[]')}catch(err){}
- log.unshift({time:new Date().toLocaleString('zh-TW'),code,c:customJob,e:customEmotion,jobs:jobs.slice(0,3),events});localStorage.setItem(EARTH_KEY,JSON.stringify(log.slice(0,12)));renderEarthLog();
+ log.unshift({time:new Date().toLocaleString('zh-TW'),code,c:customJob,e:customGoal,jobs:jobs.slice(0,3),events});localStorage.setItem(EARTH_KEY,JSON.stringify(log.slice(0,12)));renderEarthLog();
 }
 function renderEarthLog(){let log=[];try{log=JSON.parse(localStorage.getItem(EARTH_KEY)||'[]')}catch(err){};document.getElementById('earthLog').innerHTML=log.length?log.map(x=>`<div class="earth-log-item"><b>${x.code}｜${x.c}</b><br><small>${x.time}｜${x.e}</small><br>職業：${x.jobs.join('、')}<br>事件：${x.events.join('、')}</div>`).join(''):'<div class="empty">尚未生成紀錄。</div>'}
 function initEarth(){
  document.getElementById('earthCategory').value='AI 內容創作者';
- document.getElementById('earthEmotion').value='期待';
+ document.getElementById('earthGoal').value='完成今天最重要的一件事';
  document.getElementById('professionList').innerHTML=Object.entries(earthJobs).map(([k,v])=>`<article class="profession-group"><h4>${k}</h4><p>${v.join('、')}</p></article>`).join('');
  document.getElementById('earthGenerateBtn').addEventListener('click',buildEarthCard);
  document.getElementById('earthRandomBtn').addEventListener('click',()=>{
@@ -516,10 +651,28 @@ const careerByDNA={
  '比肩':{jobs:'自由工作、個人品牌、技術專家、創業、手作、顧問、自主管理職',money:'靠獨立能力、專業定價與可複製服務獲利；避免低價競爭及所有事情都自己做。',life:'需要自主權與自己的節奏，練習授權、合作和接受不同做法。'}
 };
 
+let peopleMemoryFallback=[];
 function getStoredPeople(){
- try{return JSON.parse(localStorage.getItem(PEOPLE_KEY)||'[]')}catch(e){return[]}
+ try{
+   const raw=localStorage.getItem(PEOPLE_KEY);
+   if(!raw)return peopleMemoryFallback;
+   const parsed=JSON.parse(raw);
+   return Array.isArray(parsed)?parsed:peopleMemoryFallback;
+ }catch(e){
+   return peopleMemoryFallback;
+ }
 }
-function saveStoredPeople(items){localStorage.setItem(PEOPLE_KEY,JSON.stringify(items))}
+function saveStoredPeople(items){
+ peopleMemoryFallback=Array.isArray(items)?items:[];
+ try{localStorage.setItem(PEOPLE_KEY,JSON.stringify(peopleMemoryFallback));return true}
+ catch(e){return false}
+}
+function setPeopleStatus(message,type=''){
+ const el=document.getElementById('peopleStatus');
+ if(!el)return;
+ el.textContent=message;
+ el.className='people-status'+(type?' '+type:'');
+}
 function personProfile(name,relation,date){
  const [y,m,d]=date.split('-').map(Number);
  const digits=`${String(y).padStart(4,'0')}${String(m).padStart(2,'0')}${String(d).padStart(2,'0')}`;
@@ -637,24 +790,52 @@ function renderCareers(items){
  }).join('');
 }
 function addPerson(name,relation,date){
- if(!date)return;
+ if(!date){
+   setPeopleStatus('請先選擇出生年月日。','error');
+   document.getElementById('personBirthday').focus();
+   return false;
+ }
+ const check=new Date(date+'T12:00:00');
+ if(Number.isNaN(check.getTime())){
+   setPeopleStatus('出生年月日格式不正確，請重新選擇。','error');
+   return false;
+ }
  const items=getStoredPeople();
- items.push(personProfile(name,relation,date));
- saveStoredPeople(items.slice(-20));renderPeople();
+ const profile=personProfile(name,relation,date);
+ items.push(profile);
+ const saved=saveStoredPeople(items.slice(-20));
+ renderPeople();
+ setPeopleStatus(`已新增：${profile.name}｜${profile.relation}｜${profile.date}${saved?'':'（目前使用暫存模式）'}`,'success');
+ return true;
 }
 document.getElementById('addPersonBtn').addEventListener('click',()=>{
- const name=document.getElementById('personName').value.trim();
+ const name=document.getElementById('personName').value.trim()||'匿名人物';
  const relation=document.getElementById('personRelation').value;
  const date=document.getElementById('personBirthday').value;
- if(!date)return;
- addPerson(name,relation,date);
- document.getElementById('personName').value='';
+ if(addPerson(name,relation,date)){
+   document.getElementById('personName').value='';
+ }
+});
+document.getElementById('personBirthday').addEventListener('change',e=>{
+ if(e.target.value)setPeopleStatus(`已選擇生日：${e.target.value}，請按「新增人物」。`);
+});
+document.getElementById('personName').addEventListener('keydown',e=>{
+ if(e.key==='Enter'){e.preventDefault();document.getElementById('addPersonBtn').click()}
 });
 document.getElementById('addCurrentPersonBtn').addEventListener('click',()=>{
- const date=document.getElementById('birthday').value;if(!date)return;
+ const date=document.getElementById('birthday').value;
+ if(!date){setPeopleStatus('首頁出生日期尚未設定。','error');return}
  addPerson('本人','自己',date);
 });
-document.getElementById('clearPeopleBtn').addEventListener('click',()=>{localStorage.removeItem(PEOPLE_KEY);renderPeople()});
+document.getElementById('clearPeopleBtn').addEventListener('click',()=>{
+ peopleMemoryFallback=[];
+ try{localStorage.removeItem(PEOPLE_KEY)}catch(e){}
+ renderPeople();
+ setPeopleStatus('已清除全部人物。');
+});
+if(!document.getElementById('personBirthday').value){
+ document.getElementById('personBirthday').value='2026-07-17';
+}
 renderPeople();
 
 
@@ -690,5 +871,110 @@ function renderExplorationSummary(){if(!explorationCard)return;const values=Obje
 function saveExploration(){if(!explorationCard)return;const item={time:new Date().toLocaleString('zh-TW',{hour12:false}),card:explorationCard,notes:Object.fromEntries(explorationFields.map(id=>[id,document.getElementById(id).value.trim()]))};let all=[];try{all=JSON.parse(localStorage.getItem('universe100_explorations')||'[]')}catch{}all.unshift(item);localStorage.setItem('universe100_explorations',JSON.stringify(all.slice(0,30)));document.getElementById('saveExplorationBtn').textContent='已儲存探索紀錄'}
 function restartExploration(){explorationCard=null;explorationFields.forEach(id=>document.getElementById(id).value='');document.getElementById('saveExplorationBtn').textContent='儲存本次探索';showExplorationStage(0)}
 document.getElementById('exploreDrawBtn').addEventListener('click',drawExplorationCard);document.getElementById('prevExploreBtn').addEventListener('click',()=>showExplorationStage(explorationStage-1));document.getElementById('nextExploreBtn').addEventListener('click',()=>showExplorationStage(explorationStage+1));document.getElementById('saveExplorationBtn').addEventListener('click',saveExploration);document.getElementById('restartExplorationBtn').addEventListener('click',restartExploration);showExplorationStage(0);
+
+
+/* ===== Universe 100 今日運勢中心 ===== */
+const fortuneColors=['金色','水藍色','紫羅蘭','翡翠綠','珊瑚粉','銀白色','靛藍色','暖橙色','玫瑰紅'];
+const fortuneDirections=['東方','東南方','南方','西南方','西方','西北方','北方','東北方','中央'];
+const fortuneTimes=['07:00–09:00','09:00–11:00','11:00–13:00','13:00–15:00','15:00–17:00','17:00–19:00','19:00–21:00','21:00–23:00','06:00–08:00'];
+function dateValueParts(value){
+  const [y,m,d]=String(value).split('-').map(Number);
+  return {y:y||0,m:m||0,d:d||0};
+}
+function dateDigitSum(value){
+  return String(value).replace(/\D/g,'').split('').reduce((sum,n)=>sum+Number(n),0);
+}
+function seededScore(seed,offset){
+  return 55+((seed*(offset*17+11)+offset*29)%46);
+}
+function fortuneText(core,goal){
+  const x=A[core];
+  const focus={
+    0:'先保留空間，整理真正想要的方向。',
+    1:'主動開始，不必等到所有條件完美。',
+    2:'善用合作與傾聽，重要答案可能來自交流。',
+    3:'今天適合表達、創作與分享新點子。',
+    4:'建立順序與時間表，穩定比速度重要。',
+    5:'允許調整方法，但不要輕易放棄目標。',
+    6:'兼顧責任與自我照顧，避免替所有人承擔。',
+    7:'先研究與觀察，找到問題背後的規律。',
+    8:'聚焦成果、資源與現實執行，適合做決策。',
+    9:'完成、整理與交付，讓舊階段正式結束。'
+  };
+  return `今日核心是 ${core} 號「${x.name}」。${focus[core]}你的目標「${goal}」適合先轉化成一個可在今天完成的具體行動。`;
+}
+function renderFortune(){
+  const birthday=document.getElementById('fortuneBirthday').value||document.getElementById('birthday').value||'2026-07-17';
+  const goal=(document.getElementById('fortuneGoal').value||'完成今天最重要的一件事').trim();
+  const now=new Date();
+  const today=`${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
+  document.getElementById('fortuneToday').textContent=now.toLocaleDateString('zh-TW',{year:'numeric',month:'long',day:'numeric',weekday:'long'});
+  const birthSum=dateDigitSum(birthday),todaySum=dateDigitSum(today);
+  const universeNumber=(birthSum+todaySum)%100;
+  const core=reduce(universeNumber);
+  const c=cardData(universeNumber);
+  const seed=birthSum*101+todaySum*37+universeNumber;
+  const categories=[
+    ['整體',seededScore(seed,1)],['工作',seededScore(seed,2)],['財運',seededScore(seed,3)],
+    ['感情',seededScore(seed,4)],['學習',seededScore(seed,5)]
+  ];
+  const luckyNumber=(universeNumber+todaySum)%100;
+  const color=fortuneColors[core%fortuneColors.length];
+  const direction=fortuneDirections[(core+todaySum)%fortuneDirections.length];
+  const luckyTime=fortuneTimes[(universeNumber+birthSum)%fortuneTimes.length];
+  const stars=n=>'★'.repeat(Math.max(1,Math.min(5,Math.round(n/20))))+'☆'.repeat(5-Math.max(1,Math.min(5,Math.round(n/20))));
+  document.getElementById('fortuneResult').innerHTML=`
+    <div class="fortune-overview">
+      <article class="fortune-main">
+        <div class="fortune-main-number">${c.number}</div>
+        <h3>${c.title}｜${c.dna}</h3>
+        <p>${fortuneText(core,safeText(goal))}</p>
+        <p><b>今日提醒：</b>${A[core].light}</p>
+        <p><b>避免：</b>${A[core].shadow}</p>
+      </article>
+      <article class="fortune-card">
+        <h3>今日目標推進</h3>
+        <p><b>目前目標：</b>${safeText(goal)}</p>
+        <p><b>第一步：</b>先安排 20–30 分鐘，只完成最小可行成果。</p>
+        <p><b>完成標準：</b>今天結束前留下可看見、可保存或可交付的進度。</p>
+        <div class="fortune-bars">
+          ${categories.map(([name,score])=>`<div class="fortune-bar"><span>${name}</span><div class="fortune-track"><div class="fortune-fill" style="width:${score}%"></div></div><b>${score}</b></div>`).join('')}
+        </div>
+      </article>
+    </div>
+    <div class="fortune-score-grid">
+      ${categories.map(([name,score])=>`<div class="fortune-score"><b>${name}運</b><strong>${score}</strong><small>${stars(score)}</small></div>`).join('')}
+    </div>
+    <div class="fortune-lucky">
+      <div><small>幸運數字</small><b>${String(luckyNumber).padStart(2,'0')}</b></div>
+      <div><small>幸運顏色</small><b>${color}</b></div>
+      <div><small>幸運方位</small><b>${direction}</b></div>
+      <div><small>幸運時間</small><b>${luckyTime}</b></div>
+    </div>`;
+  localStorage.setItem('universe100_fortune_goal',goal);
+}
+document.getElementById('fortuneGenerateBtn').addEventListener('click',renderFortune);
+document.getElementById('fortuneTodayBtn').addEventListener('click',()=>{
+  document.getElementById('fortuneBirthday').value=document.getElementById('birthday').value||'2026-07-17';
+  renderFortune();
+});
+document.getElementById('fortuneSaveBtn').addEventListener('click',()=>{
+  const key='universe100_fortune_records';
+  let records=[];try{records=JSON.parse(localStorage.getItem(key)||'[]')}catch{}
+  records.unshift({
+    savedAt:new Date().toLocaleString('zh-TW',{hour12:false}),
+    birthday:document.getElementById('fortuneBirthday').value,
+    goal:document.getElementById('fortuneGoal').value
+  });
+  localStorage.setItem(key,JSON.stringify(records.slice(0,30)));
+  document.getElementById('fortuneSaveBtn').textContent='已儲存今日運勢';
+});
+document.getElementById('birthday').addEventListener('change',e=>{
+  document.getElementById('fortuneBirthday').value=e.target.value;
+  renderFortune();
+});
+document.getElementById('fortuneBirthday').value=document.getElementById('birthday').value||'2026-07-17';
+document.getElementById('fortuneGoal').value=localStorage.getItem('universe100_fortune_goal')||'';
+renderFortune();
 
 </script><a aria-label="回到頂端" class="back-top" href="#top">↑</a></body></html>
